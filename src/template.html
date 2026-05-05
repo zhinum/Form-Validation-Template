@@ -3,7 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STARTER</title>
+    <title>Form- validation</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Form validation</h1>
+    <div>
+      <button class="open">Open Form</button>
+    </div>
+    <div id="form-overlay" class="hidden">
+      <form id="validation-form" novalidate>
+        <div class="form-group">
+          <label for="title">Book Title</label>
+          <input type="text" id="title" name="title" required minlength="2" />
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected>Select a country</option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom">United Kingdom</option>
+          </select>
+          <span class="error-msg"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="postcode">Postal Code</label>
+          <input
+            type="text"
+            id="postcode"
+            name="postcode"
+            inputmode="numeric"
+            pattern="\d{6}"
+            required
+            placeholder="6 digits"
+          />
+          <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="4"
+          />
+          <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+          <span class="error-msg" aria-live="polite"></span>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+          <button class="close">Close form</button>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
