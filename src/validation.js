@@ -6,6 +6,7 @@ export class Validation {
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
       this.formOverlay.classList.add("hidden");
+      this.showSuccess();
     });
     this.inputs = document.querySelectorAll("input");
     this.setUpListeners();
@@ -51,5 +52,13 @@ export class Validation {
     } else {
       errorMsg.textContent = "";
     }
+  }
+
+  showSuccess() {
+    const body = document.querySelector("body");
+    const highFive = document.createElement("div");
+    highFive.textContent = "success✋";
+    highFive.classList.add("high-five");
+    body.append(highFive);
   }
 }

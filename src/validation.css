@@ -34,3 +34,7 @@ input:user-invalid {
 input:invalid + .error-msg {
   display: block;
 }
+.high-five {
+  text-align: center;
+  font-size: 100px;
+}
